@@ -48,7 +48,7 @@ The `SelfAttention` module computes query, key, and value projections, applies a
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/NeuralColorizer.git
+git clone https://github.com/Swathi014/NeuralColorizer.git
 cd NeuralColorizer
 
 # 2. (Recommended) Create and activate a virtual environment
@@ -131,4 +131,4 @@ NeuralColorizer/
 
 > Add a `demo.png` screenshot of a before/after comparison and uncomment the line below:
 
-<!-- ![Before and After Demo](demo.png) -->
+ ![Before and After Demo](demo.png) 
