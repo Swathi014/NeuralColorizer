@@ -1,0 +1,94 @@
+
+---
+
+```markdown
+# 🎨 Neural Image Colorizer
+**M.Tech Data Science Mini-Project | RIT Kottayam**
+
+A deep learning-based application designed to automatically restore realistic colors to grayscale landscape photography. This project leverages a custom **Convolutional Neural Network (CNN)** architecture enhanced with a **Self-Attention Mechanism** to handle long-range spatial dependencies and ensure global color consistency.
+
+---
+
+## 🚀 Key Features
+* **Attention-Driven Colorization:** Uses a Self-Attention bottleneck to recognize and differentiate landscape elements like sky, water, and foliage.
+* **LAB Color Space Pipeline:** Operates in the CIE LAB color space to preserve original luminance ($L$) while predicting color channels ($ab$).
+* **Modern Streamlit UI:** A professional, interactive dashboard for real-time inference and user uploads.
+* **Hardware Accelerated:** Optimized for NVIDIA RTX GPUs (CUDA) for near-instant processing on high-performance hardware like the HP Victus.
+
+---
+
+## 🛠️ Model Architecture
+The system follows a modular Encoder-Decoder structure:
+1. **Encoder:** Multi-stage downsampling for hierarchical feature extraction.
+2. **Bottleneck:** Integrated **Self-Attention** layer (Module 5) to capture global context and prevent "color bleeding."
+3. **Decoder:** Upsampling via Transposed Convolutions to reconstruct spatial dimensions.
+4. **Final Layer:** Tanh-activated convolution producing predicted $ab$ channels.
+
+
+
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/your-username/NeuralColorizer.git](https://github.com/your-username/NeuralColorizer.git)
+cd NeuralColorizer
+```
+
+### 2. Install Dependencies
+This project requires Python 3.10 or higher. Install the necessary libraries using:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Model Weights
+Place your trained `landscape_model.pth` file in the root directory. 
+> **Note:** Weight files are excluded from version control via `.gitignore` to maintain repository efficiency.
+
+---
+
+## 🖥️ Running the Application
+
+To launch the interactive UI, run the following command in your terminal:
+
+```bash
+streamlit run app.py
+```
+
+1. Open the local URL provided (usually `http://localhost:8501`).
+2. Use the **Inference Quality** slider in the sidebar to choose processing resolution (128 or 256).
+3. Upload a grayscale landscape image.
+4. Click **Generate Color** to see the result.
+
+---
+
+## 📊 Dataset & Training
+* **Source:** Landscape Colorization Dataset (Kaggle).
+* **Training Specs:** 100+ Epochs, Adam Optimizer, Mean Squared Error (MSE) Loss.
+* **Input Resolution:** Resized to 128x128 or 256x256 during inference, then scaled back to original dimensions for output.
+
+---
+
+## 📂 Project Structure
+* `app.py`: The Streamlit frontend and UI logic.
+* `model.py`: The PyTorch architecture (Colorizer & Self-Attention classes).
+* `landscape_model.pth`: Saved model weights (not included in repo).
+* `requirements.txt`: List of Python dependencies.
+
+---
+
+## 🎓 Academic Profile
+* **Author:** Swathi P.
+* **Course:** M.Tech Data Science
+* **Institution:** Rajiv Gandhi Institute of Technology (RIT), Kottayam
+* **Submission Year:** 2026
+
+```
+
+---
+
+### Tips for a Great GitHub Repo:
+1. **The "your-username" part:** Change the link in the Clone section to your actual GitHub URL.
+2. **Screenshots:** Once you run the app, take a screenshot of a "Before and After" comparison and save it as `demo.png`. You can then add `![Demo](demo.png)` to the README to make it look even better.
+3. **The `.pth` file:** Since we don't upload the model weights, it's a good idea to mention in your presentation that you kept them locally for better performance.
