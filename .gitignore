@@ -1,0 +1,23 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+
+# --- ML Models & Data (VERY IMPORTANT) ---
+# We don't upload large weights or datasets to GitHub
+*.pth
+*.h5
+*.weights
+landscape Images/
+dataset/
+
+# --- Streamlit & OS ---
+.streamlit/
+.DS_Store
+Thumbs.db
